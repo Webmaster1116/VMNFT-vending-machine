@@ -1,0 +1,141 @@
+.section {
+	display: flex;
+	align-items: center;
+	gap: 5rem;
+	padding: 5rem 8rem;
+	width: 100%;
+	background-image: url('/images/mint-section-background.png');
+	border-top: 1px solid rgba(var(--green), 0.5);
+	border-bottom: 1px solid rgba(var(--green), 0.5);
+}
+
+.title {
+	color: var(--white);
+	font-size: 3rem;
+	font-family: 'NeueMachinaUltrabold', sans-serif;
+	margin-bottom: 2rem;
+}
+
+.title > u {
+	color: rgb( var(--green) );
+}
+
+.image {
+	width: 40vw;
+	max-width: 40rem;
+}
+
+.panel {
+	width: 100%;
+	color: white;
+	padding: 2rem;
+	border: 1px solid rgb( var(--green) );
+	border-radius: 25px;
+	font-size: 1.2rem;
+	background-image: linear-gradient(-45deg, rgba(32, 96, 105, 0.95) 0%, rgba(32, 96, 105, 0.85) 100%);
+}
+
+.panel > * {
+	width: 100%;
+}
+
+.supplyWrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.progressBar {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	margin: 1rem 0 3rem 0;
+}
+
+.progressBar::-webkit-progress-bar {
+	background-color: rgba(235, 235, 235, 0.25);
+	border-radius: 20px;
+}
+
+.progressBar::-moz-progress-bar {
+	background-color: rgba(235, 235, 235, 0.25);
+	border-radius: 20px;
+}
+
+.progressBar::-webkit-progress-value {
+	background-color: rgb( var(--green) );
+	border-radius: 20px;
+	opacity: 1;
+}
+
+.mintSection {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 3rem;
+}
+
+.mintSection > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.amountSelector {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 10rem;
+}
+
+.amountSelector > button {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: rgb( var(--green) );
+	cursor: pointer;
+}
+
+.amountSelector > button:hover,
+.amountSelector > button:focus {
+	box-shadow: 0 0 15px rgba(var(--green), 0.4);
+}
+
+.mintSection > div span {
+	color: rgb( var(--green) );
+}
+
+
+@media only screen and (max-width: 1300px) {
+	.section {
+		padding: 2rem 1rem;
+	}
+
+	.image {
+		display: none;
+	}
+
+	.title {
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	.panel {
+		padding: 1.5rem 1rem;
+		font-size: 1rem;
+		width: 100%;
+	}
+
+	.amountSelector {
+		width: 7rem;
+	}
+
+	.mintSection > div {
+		font-size: 0.8rem;
+	}
+
+	.mintSection > button {
+		min-width: 0;
+		padding: 1rem;
+	}
+}

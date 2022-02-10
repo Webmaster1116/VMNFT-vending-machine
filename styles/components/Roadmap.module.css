@@ -1,0 +1,270 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5rem 1rem;
+	width: 100%;
+	color: var(--white);
+}
+
+.title {
+	color: rgb( var(--green) );
+	font-size: 3rem;
+	font-family: 'NeueMachinaUltrabold', sans-serif;
+	margin-bottom: 2rem;
+}
+
+.roadmap {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	width: 80vw;
+	max-width: 70rem;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: var(--white);
+}
+
+.roadmapSection {
+	display: flex;
+	width: 100%;
+}
+
+.roadmapSection > * {
+	width: 50%;
+}
+
+.roadmapSectionContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.roadmapSection.right > .roadmapSectionContent {
+	padding-left: 3rem;
+}
+
+.roadmapSection.left > .roadmapSectionContent {
+	padding-right: 3rem;
+}
+
+.image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image > img {
+	max-height: 100%;
+}
+
+.roadmapSection.right {
+	flex-direction: row-reverse;
+}
+
+.roadmapSection.left {
+	flex-direction: row;
+}
+
+.roadmapSectionTitle {
+	position: relative;
+	font-family: 'NeueMachinaUltrabold', sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.roadmapSection.right .roadmapSectionTitle {
+	text-align: left;
+}
+
+.roadmapSection.left .roadmapSectionTitle {
+	text-align: right;
+}
+
+.roadmapSectionTitle::after {
+	position: absolute;
+	content: '';
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: var(--white);
+	box-shadow: 0 0 10px rgba(var(--green), 0.75);
+}
+
+.roadmapSection.right .roadmapSectionTitle::after {
+	left: -4.01rem;
+}
+
+.roadmapSection.left .roadmapSectionTitle::after {
+	right: -4.01rem;
+}
+
+.roadmapSection > div > ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.roadmapElement {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.roadmapSection.right .roadmapElement {
+	justify-content: flex-start;
+	text-align: left;
+}
+
+.roadmapSection.left .roadmapElement {
+	justify-content: flex-end;
+	text-align: right;
+}
+
+.roadmapElement::after {
+	position: absolute;
+	content: '';
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: var(--white);
+}
+
+.roadmapElement.done::after {
+	background-color: rgb( var(--green) );
+}
+
+.roadmapSection.right .roadmapElement::after {
+	left: -3.51rem;
+}
+
+.roadmapSection.left .roadmapElement::after {
+	right: -3.51rem;
+}
+
+.explanation {
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+}
+
+.explanationIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 50%;
+	font-size: 0.8rem;
+	background-color: rgb(43, 55, 78);
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+.explanationText {
+	position: absolute;
+	display: none;
+	bottom: 0.75rem;
+	right: 0.75rem;
+	padding: 1rem;
+	text-align: left;
+	border-radius: 25px;
+	border: 1px solid rgb( var(--green) );
+	background-color: rgba(19, 25, 37, 0.75);
+	backdrop-filter: blur(1px);
+	width: max-content;
+	max-width: 25rem;
+	overflow-wrap: break-word;
+}
+
+.explanationText > a {
+	color: rgb( var(--green) );
+	outline: none;
+}
+
+.explanationText > a:hover,
+.explanationText > a:focus {
+	text-decoration: underline;
+}
+
+.roadmapSection.right .explanation {
+	left: -2rem;
+}
+
+.roadmapSection.left .explanation {
+	right: -2rem;
+}
+
+.explanation:hover .explanationText {
+	display: block;
+}
+
+.explanation:hover .explanationIcon {
+	opacity: 1;
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+	.title {
+		font-size: 2rem;
+	}
+
+	.roadmap {
+		align-items: flex-start;
+	}
+	
+	.roadmapSection > * {
+		width: unset;
+		width: 100%;
+	}
+
+	.image > img {
+		width: 80%;
+		padding: 2rem 0;
+	}
+
+	.roadmapSection.right,
+	.roadmapSection.left {
+		flex-direction: column;
+	}
+
+	.roadmapSection.left .roadmapSectionTitle,
+	.roadmapSection.right .roadmapSectionTitle {
+		text-align: left;
+	}
+
+	.roadmapSection.left .roadmapSectionTitle::after {
+		left: -4.01rem;
+	}
+
+	.roadmapSection.right .roadmapElement,
+	.roadmapSection.left .roadmapElement {
+		text-align: left;
+		justify-content: flex-start;
+	}
+
+	.roadmapSectionTitle {
+		font-size: 1.2rem;
+	}
+
+	.roadmapSectionContent {
+		padding: 0 0 0 3rem;
+		font-size: 0.8rem;
+	}
+
+	.roadmapSection.left .roadmapElement::after {
+		left: -3.51rem;
+	}
+
+	.explanationText {
+		max-width: 75vw;
+	}
+}

@@ -1,0 +1,143 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 4rem 0;
+	width: 100%;
+}
+
+.title {
+	color: rgb( var(--green) );
+	font-size: 3rem;
+	font-family: 'NeueMachinaUltrabold', sans-serif;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.subtitle {
+	font-size: 2rem;
+	font-family: 'NeueMachinaUltrabold', sans-serif;
+	color: var(--white);
+	margin: 4rem 0 2rem 0;
+}
+
+.founders {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	column-gap: 4rem;
+	row-gap: 2rem;
+	padding: 0 2rem;
+}
+
+.founder {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	border: 2px solid rgba(var(--green), 0.25);
+	border-radius: 25px;
+	color: var(--white);
+	backdrop-filter: blur(100px);
+	background-image: linear-gradient(to bottom, rgba(53, 255, 171, 0.4), rgba(255, 255, 255, 0.15));
+	background-size: 100% 200%;
+	animation: shine 2s var(--delay) ease-in-out infinite;
+	-webkit-animation: shine 2s var(--delay) ease-in-out infinite;
+	-moz-animation: shine 2s var(--delay) ease-in-out infinite;
+}
+
+@keyframes shine { 
+	0% {
+		background-position: 0% 0%
+	}
+
+	50% {
+		background-position: 0% 95%
+	}
+
+	100% {
+		background-position: 0% 0%
+	}
+}
+
+@-webkit-keyframes shine { 
+	0% {
+		background-position: 0% 0%
+	}
+
+	50% {
+		background-position: 0% 95%
+	}
+
+	100% {
+		background-position: 0% 0%
+	}
+}
+
+@-moz-keyframes shine { 
+	0% {
+		background-position: 0% 0%
+	}
+
+	50% {
+		background-position: 0% 95%
+	}
+
+	100% {
+		background-position: 0% 0%
+	}
+}
+
+.founder > img {
+	width: 11rem;
+}
+
+.name {
+	font-family: 'NeueMachinaUltrabold';
+	margin: 1rem 0 0.5rem 0;
+	color: var(--white);
+}
+
+.name[href] {
+	text-decoration: underline;
+}
+
+.role {
+	color: silver;
+	text-align: center;
+}
+
+
+
+@media only screen and (max-width: 1300px) {
+	.title {
+		font-size: 2rem;
+	}
+
+	.subtitle {
+		font-size: 1.5rem;
+		align-items: flex-start;
+	}
+
+	.founders {
+		position: relative;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		width: 100%;
+		overflow-x: scroll;
+	}
+
+	.founders::-webkit-scrollbar {
+		display: none;
+	}
+
+	.founder {
+		font-size: 0.8rem;
+	}
+
+	.founder > img {
+		width: 8rem;
+	}
+}
